@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-
 const FBARNTextInput = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress}>
