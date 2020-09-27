@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect, useReducer} from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import styles from './styles';
+import {fetchAlbumList} from './actions';
+import {useDispatch} from 'react-redux';
 
-const AlbumList = ({params}) => {
+const AlbumList = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAlbumList());
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>

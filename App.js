@@ -7,7 +7,9 @@ import AlbumList from './src/screens/album-list';
 import AlbumsDetail from './src/screens/albums-detail';
 
 import {enableScreens} from 'react-native-screens';
-
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import {store, persistor} from './src/store/configureStore';
 enableScreens();
 const Stack = createNativeStackNavigator();
 
@@ -17,20 +19,24 @@ const navigationOptions = {
 };
 const App = ({params}) => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="AlbumList">
-        <Stack.Screen
-          name="AlbumList"
-          options={navigationOptions}
-          component={AlbumList}
-        />
-        <Stack.Screen
-          name="AlbumsDetail"
-          component={AlbumsDetail}
-          options={navigationOptions}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="AlbumList">
+            <Stack.Screen
+              name="AlbumList"
+              options={navigationOptions}
+              component={AlbumList}
+            />
+            <Stack.Screen
+              name="AlbumsDetail"
+              component={AlbumsDetail}
+              options={navigationOptions}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
+    </Provider>
   );
 };
 
