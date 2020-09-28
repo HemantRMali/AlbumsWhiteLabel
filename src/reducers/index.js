@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 // Imports: Reducers
-import AlbumReducer from '../screens/album-list/reducer';
+import AlbumReducer from '../screens/AlbumList/reducer';
 
 // Redux: Root Reducer
 const appReducer = combineReducers({

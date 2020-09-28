@@ -2,7 +2,7 @@ import {all} from 'redux-saga/effects';
 
 // Imports: Redux Sagas
 
-import {fetchAlbumListWatcher} from '../screens/album-list/saga';
+import {fetchAlbumListWatcher} from '../screens/AlbumList/saga';
 
 // Redux Saga: Root Saga
 export function* rootSaga() {

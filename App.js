@@ -3,8 +3,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 
-import AlbumList from './src/screens/album-list';
-import AlbumsDetail from './src/screens/albums-detail';
+import AlbumList from './src/screens/AlbumList';
+import AlbumsDetail from './src/screens/AlbumsDetail';
 
 import {enableScreens} from 'react-native-screens';
 import {Provider} from 'react-redux';
@@ -13,10 +13,7 @@ import {store, persistor} from './src/store/configureStore';
 enableScreens();
 const Stack = createNativeStackNavigator();
 
-const navigationOptions = {
-  headerShown: false,
-  header: null,
-};
+const navigationOptions = {};
 const App = ({params}) => {
   return (
     <Provider store={store}>
