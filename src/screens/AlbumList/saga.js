@@ -20,14 +20,28 @@ import {ActionTypes} from './constants';
  */
 function* fetchAlbumList(action) {
   try {
-    console.log('fetchAlbumList:', action);
+    //console.log('fetchAlbumList:', action);
     const {response} = yield request({url: GET_ALBUMS_URL, httpMethod: 'GET'});
-    console.log('response:', response);
+    //console.log('response:', response);
     const list = response.data;
-    console.log(':list:', list);
+    //console.log(':list:', list);
+
+    const albumList = [];
+    list.results.forEach((mItem, index) => {
+      const track = {
+        id: String(mItem.trackId),
+        url: mItem.previewUrl,
+        title: mItem.trackName,
+        artist: mItem.artistName,
+        artwork: mItem.artworkUrl100,
+        duration: mItem.trackTimeMillis / 60 / 60,
+      };
+      albumList.push(track);
+    });
+
     yield put({
       type: ActionTypes.LOAD_ALBUM_LIST,
-      payload: {albums: list.results},
+      payload: {albums: albumList},
     });
   } catch (error) {
     yield put({type: ActionTypes.ERROR_ALBUM_LIST, payload: error});

@@ -19,7 +19,7 @@ const AlbumList = (props) => {
           renderItem={({item}) => (
             <AlbumItem item={item} navigation={props.navigation} />
           )}
-          keyExtractor={(item) => item.trackId}
+          keyExtractor={(item) => item.id}
           numColumns={2}
           contentContainerStyle={styles.contentContainerStyle}
         />

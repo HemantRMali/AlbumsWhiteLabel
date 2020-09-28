@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Image} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {View, Image, TouchableOpacity} from 'react-native';
+
 import styles from './styles';
 
 const AlbumItem = (props) => {
@@ -14,7 +14,7 @@ const AlbumItem = (props) => {
             ? props.navigation.navigate('AlbumsDetail', {album})
             : null;
         }}>
-        <Image style={styles.albumImage} source={{uri: album.artworkUrl100}} />
+        <Image style={styles.albumImage} source={{uri: album.artwork}} />
       </TouchableOpacity>
     </View>
   );
