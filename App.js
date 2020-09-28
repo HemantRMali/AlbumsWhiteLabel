@@ -13,7 +13,6 @@ import {store, persistor} from './src/store/configureStore';
 enableScreens();
 const Stack = createNativeStackNavigator();
 
-const navigationOptions = {};
 const App = ({params}) => {
   return (
     <Provider store={store}>
@@ -22,13 +21,13 @@ const App = ({params}) => {
           <Stack.Navigator initialRouteName="AlbumList">
             <Stack.Screen
               name="AlbumList"
-              options={navigationOptions}
+              options={{title: 'Albums'}}
               component={AlbumList}
             />
             <Stack.Screen
               name="AlbumsDetail"
               component={AlbumsDetail}
-              options={navigationOptions}
+              options={{title: 'Album Details'}}
             />
           </Stack.Navigator>
         </NavigationContainer>

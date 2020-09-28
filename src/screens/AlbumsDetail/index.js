@@ -1,13 +1,43 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView, Image, ScrollView} from 'react-native';
 import styles from './styles';
 
-const AlbumsDetail = ({params}) => (
-  <View style={styles.container}>
-    <Text style={styles.text}>
-      Module <Text style={styles.accent}>Albums detail</Text>
+const renderTitleSubtitle = (title, subtitle) => {
+  return (
+    <Text style={styles.title}>
+      {title} <Text style={styles.subtitle}>{subtitle}</Text>
     </Text>
-  </View>
-);
+  );
+};
+
+const AlbumsDetail = (props) => {
+  //console.log('props:', props.route.params.album);
+  const album = props.route.params.album;
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollViewContentContainerStyle}>
+          <Image
+            source={{
+              uri: album.artworkUrl100,
+            }}
+            style={styles.albumImage}
+          />
+          <View style={styles.detailsContainer}>
+            {renderTitleSubtitle('Artist Name:', album.artistName)}
+            {renderTitleSubtitle('Track Name:', album.trackName)}
+            {renderTitleSubtitle('Collection Name:', album.collectionName)}
+            {renderTitleSubtitle(
+              'Collection Price:',
+              `${album.currency} ${album.collectionPrice}`,
+            )}
+          </View>
+        </ScrollView>
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default AlbumsDetail;

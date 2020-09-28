@@ -4,8 +4,7 @@ import styles from './styles';
 import {fetchAlbumList} from './actions';
 import {useDispatch, useSelector} from 'react-redux';
 import AlbumItem from '../../components/AlbumItem';
-{
-}
+
 const AlbumList = (props) => {
   const dispatch = useDispatch();
   const albums = useSelector((state) => state.AlbumReducer.albums);
@@ -17,7 +16,9 @@ const AlbumList = (props) => {
       <View style={styles.container}>
         <FlatList
           data={albums}
-          renderItem={({item}) => <AlbumItem item={item} />}
+          renderItem={({item}) => (
+            <AlbumItem item={item} navigation={props.navigation} />
+          )}
           keyExtractor={(item) => item.trackId}
           numColumns={2}
           contentContainerStyle={styles.contentContainerStyle}
