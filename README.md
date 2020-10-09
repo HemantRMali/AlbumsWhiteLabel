@@ -4,7 +4,7 @@
 * [General info](#general-info)
 
 ## General info
-General information of project goes here.
+This is a sample project to showcase music player implementation.
 	
 ## Libraries implemented
 * `@react-native-community/push-notification-ios`
