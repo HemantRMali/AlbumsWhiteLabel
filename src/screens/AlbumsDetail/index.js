@@ -42,17 +42,10 @@ const AlbumsDetail = (props) => {
   }
 
   async function togglePlayback() {
+    console.log('album:', album);
+    console.log('Math.round(album.duration):', Math.round(album.duration));
     const currentTrack = await TrackPlayer.getCurrentTrack();
-    console.log('currentTrack:', currentTrack);
-    console.log('albums:', albums);
-    if (currentTrack) {
-      if (playbackState === TrackPlayer.STATE_PAUSED) {
-        await TrackPlayer.play();
-      } else {
-        await TrackPlayer.pause();
-      }
-      //await TrackPlayer.play();
-    } else {
+    if (currentTrack == null) {
       await TrackPlayer.reset();
       await TrackPlayer.add(albums);
       await TrackPlayer.add({
@@ -61,7 +54,15 @@ const AlbumsDetail = (props) => {
         title: album.title,
         artist: album.artist,
         artwork: album.artwork,
+        duration: Math.round(album.duration),
       });
+      await TrackPlayer.play();
+    } else {
+      if (playbackState === TrackPlayer.STATE_PAUSED) {
+        await TrackPlayer.play();
+      } else {
+        await TrackPlayer.pause();
+      }
     }
   }
 

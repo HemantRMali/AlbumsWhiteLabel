@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "621197928762",
+    "firebase_url": "https://albumswhitelabel.firebaseio.com",
+    "project_id": "albumswhitelabel",
+    "storage_bucket": "albumswhitelabel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621197928762:android:a0a5bf4a66854cdcfc8803",
+        "android_client_info": {
+          "package_name": "com.albumswhitelabel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621197928762-2cp14vmnkd3ieumg9sbnhvii4uu0dsa7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgA3kWDLoTdVfV9KcOw9N4dLZhTJGcgwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621197928762-2cp14vmnkd3ieumg9sbnhvii4uu0dsa7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "621197928762-4p0b8npgrp6rhkr0lac8n42m5vmmo8mu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.whitelabel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

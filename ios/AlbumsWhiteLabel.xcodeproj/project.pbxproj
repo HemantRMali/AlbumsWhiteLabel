@@ -56,6 +56,7 @@
 		2885433AEF16678667BF9878 /* Pods-AlbumsWhiteLabel-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumsWhiteLabel-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-AlbumsWhiteLabel-tvOSTests/Pods-AlbumsWhiteLabel-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* AlbumsWhiteLabel-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlbumsWhiteLabel-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AlbumsWhiteLabel-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AlbumsWhiteLabel-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		410E7D1925307C920026605C /* AlbumsWhiteLabel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AlbumsWhiteLabel.entitlements; path = AlbumsWhiteLabel/AlbumsWhiteLabel.entitlements; sourceTree = "<group>"; };
 		61237CC157037DD7015305F3 /* libPods-AlbumsWhiteLabel-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlbumsWhiteLabel-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		689DBA92F2978BC00FA11ABC /* Pods-AlbumsWhiteLabel-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumsWhiteLabel-tvOS.release.xcconfig"; path = "Target Support Files/Pods-AlbumsWhiteLabel-tvOS/Pods-AlbumsWhiteLabel-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AlbumsWhiteLabel/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		13B07FAE1A68108700A75B9A /* AlbumsWhiteLabel */ = {
 			isa = PBXGroup;
 			children = (
+				410E7D1925307C920026605C /* AlbumsWhiteLabel.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -654,6 +656,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AlbumsWhiteLabel/AlbumsWhiteLabel.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AlbumsWhiteLabel/Info.plist;
@@ -678,6 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AlbumsWhiteLabel/AlbumsWhiteLabel.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = AlbumsWhiteLabel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

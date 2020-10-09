@@ -19,7 +19,7 @@ function ProgressBar() {
 
   return (
     <View style={styles.progress}>
-      <View style={{flex: progress.position, backgroundColor: 'red'}} />
+      <View style={{flex: progress.position, backgroundColor: 'blue'}} />
       <View
         style={{
           flex: progress.duration - progress.position,
@@ -76,9 +76,9 @@ export default function Player(props) {
       <Text style={styles.title}>{trackTitle}</Text>
       <Text style={styles.artist}>{trackArtist}</Text>
       <View style={styles.controls}>
-        <ControlButton title={'<<'} onPress={onPrevious} />
+        <ControlButton title={'Previous'} onPress={onPrevious} />
         <ControlButton title={middleButtonText} onPress={onTogglePlayback} />
-        <ControlButton title={'>>'} onPress={onNext} />
+        <ControlButton title={'Next'} onPress={onNext} />
       </View>
     </View>
   );
