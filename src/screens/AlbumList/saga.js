@@ -2,6 +2,7 @@
  * Redux-Saga Effects
  */
 import {takeLatest, put} from 'redux-saga/effects';
+import {millisToSeconds} from '../../methods';
 
 /**
  * API Manager
@@ -34,7 +35,7 @@ function* fetchAlbumList(action) {
         title: mItem.trackName,
         artist: mItem.artistName,
         artwork: mItem.artworkUrl100,
-        duration: mItem.trackTimeMillis / 60 / 60,
+        duration: millisToSeconds(mItem.trackTimeMillis),
       };
       albumList.push(track);
     });

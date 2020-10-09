@@ -15,10 +15,10 @@ const API = create({
  * and send back completion in resolve or reject based on api response.
  */
 export const request = ({url, httpMethod, params, header = {}}) => {
-  console.log('request:');
-  console.log('url:', url);
-  console.log('httpMethod:', httpMethod);
-  console.log('params:', JSON.stringify(params));
+  // console.log('request:');
+  // console.log('url:', url);
+  // console.log('httpMethod:', httpMethod);
+  // console.log('params:', JSON.stringify(params));
   return new Promise(async (resolve, reject) => {
     try {
       switch (httpMethod) {
@@ -54,7 +54,7 @@ export const request = ({url, httpMethod, params, header = {}}) => {
  */
 export const parseResponse = (response) =>
   new Promise((parsedResponse) => {
-    console.log('API response::', response);
+    // console.log('API response::', response);
     JSON.stringify(parsedResponse);
     let isSuccess = false;
     isSuccess = response.status === 200 ? true : false;

@@ -4,7 +4,7 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 const AlbumItem = (props) => {
-  console.log('props:', props);
+  //console.log('props:', props);
   const album = props.item;
   return (
     <View style={styles.itemContainer}>

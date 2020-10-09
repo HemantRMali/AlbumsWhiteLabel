@@ -1,9 +1,4 @@
 /**
- * To bind a region in base url.
- */
-const REGION = 'kwt';
-
-/**
  *  To bind version of API.
  */
 const API_VERSION = 'v1';

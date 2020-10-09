@@ -42,8 +42,8 @@ const AlbumsDetail = (props) => {
   }
 
   async function togglePlayback() {
-    console.log('album:', album);
-    console.log('Math.round(album.duration):', Math.round(album.duration));
+    //console.log('album:', album);
+    //console.log('Math.round(album.duration):', album.duration);
     const currentTrack = await TrackPlayer.getCurrentTrack();
     if (currentTrack == null) {
       await TrackPlayer.reset();
@@ -54,7 +54,7 @@ const AlbumsDetail = (props) => {
         title: album.title,
         artist: album.artist,
         artwork: album.artwork,
-        duration: Math.round(album.duration),
+        duration: album.duration,
       });
       await TrackPlayer.play();
     } else {

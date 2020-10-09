@@ -6,10 +6,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import AlbumItem from '../../components/AlbumItem';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 var PushNotification = require('react-native-push-notification');
-//import PushNotificationIOS from '../js';
 
 const AlbumList = (props) => {
-  const [permissions, setPermissions] = useState({});
   const dispatch = useDispatch();
   const albums = useSelector((state) => state.AlbumReducer.albums);
   useEffect(() => {
