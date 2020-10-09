@@ -2,14 +2,11 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
-* [Setup](#setup)
 
 ## General info
 General information of project goes here.
 	
-## Technologies
-3rd Party libraries implemented
+## Libraries implemented
 * `@react-native-community/push-notification-ios`
 * `@react-native-firebase/app`
 * `@react-navigation/native`
