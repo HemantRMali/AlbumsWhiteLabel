@@ -18,4 +18,7 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
+  disable: {
+    backgroundColor: 'gray',
+  },
 });

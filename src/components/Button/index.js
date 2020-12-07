@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-const FBARNTextInput = (props) => {
+const AlbumsButton = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={styles.signInButton}>
@@ -11,4 +11,8 @@ const FBARNTextInput = (props) => {
   );
 };
 
-export default FBARNTextInput;
+AlbumsButton.defaultProps = {
+  title: 'Title',
+};
+
+export default AlbumsButton;

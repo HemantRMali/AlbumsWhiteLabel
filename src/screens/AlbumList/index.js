@@ -1,18 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {View, SafeAreaView, FlatList, Alert} from 'react-native';
 import styles from './styles';
 import {fetchAlbumList} from './actions';
 import {useDispatch, useSelector} from 'react-redux';
 import AlbumItem from '../../components/AlbumItem';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
-var PushNotification = require('react-native-push-notification');
+import {UserContext} from '../../../UserContext';
+import PushNotification from 'react-native-push-notification';
 
 const AlbumList = (props) => {
+  const message = useContext(UserContext);
+
   const dispatch = useDispatch();
+
   const albums = useSelector((state) => state.AlbumReducer.albums);
+
   useEffect(() => {
     registerNotification();
     dispatch(fetchAlbumList());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const registerNotification = () => {
@@ -83,15 +89,23 @@ const AlbumList = (props) => {
       ],
     );
   };
+
+  const renderItem = ({item, index}) => (
+    <AlbumItem item={item} navigation={props.navigation} />
+  );
+
+  const keyExtractor = (item) => item.id;
+
+  console.log('albums:1', albums);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+        {/* <Text>{message}</Text>
+        <AlbumsButton title="Button1" /> */}
         <FlatList
           data={albums}
-          renderItem={({item}) => (
-            <AlbumItem item={item} navigation={props.navigation} />
-          )}
-          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+          keyExtractor={keyExtractor}
           numColumns={2}
           contentContainerStyle={styles.contentContainerStyle}
         />

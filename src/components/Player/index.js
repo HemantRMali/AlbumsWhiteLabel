@@ -19,12 +19,12 @@ function ProgressBar() {
 
   return (
     <View style={styles.progress}>
-      <View style={{flex: progress.position, backgroundColor: 'blue'}} />
+      <View style={[styles.completeProgress, {flex: progress.position}]} />
       <View
-        style={{
-          flex: progress.duration - progress.position,
-          backgroundColor: 'grey',
-        }}
+        style={[
+          styles.remainingProgress,
+          {flex: progress.duration - progress.position},
+        ]}
       />
     </View>
   );
@@ -135,5 +135,9 @@ const styles = StyleSheet.create({
   controlButtonText: {
     fontSize: 18,
     textAlign: 'center',
+  },
+  completeProgress: {backgroundColor: 'blue'},
+  remainingProgress: {
+    backgroundColor: 'grey',
   },
 });

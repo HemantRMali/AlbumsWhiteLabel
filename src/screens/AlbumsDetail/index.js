@@ -5,11 +5,20 @@ import TrackPlayer, {usePlaybackState} from 'react-native-track-player';
 import Player from '../../components/Player';
 import {useSelector} from 'react-redux';
 
+import styled from 'styled-components';
+
+const Title = styled.Text`
+  font-size: 20px font-weight: 700, margin-bottom: 10;
+`;
+
+const SubTitle = styled.Text`
+  font-weight: 500;
+`;
 const renderTitleSubtitle = (title, subtitle) => {
   return (
-    <Text style={styles.title}>
-      {title} <Text style={styles.subtitle}>{subtitle}</Text>
-    </Text>
+    <Title>
+      {title} <SubTitle>{subtitle}</SubTitle>
+    </Title>
   );
 };
 
@@ -25,7 +34,7 @@ const AlbumsDetail = (props) => {
 
   async function setup() {
     await TrackPlayer.setupPlayer({});
-    await TrackPlayer.updateOptions({
+    TrackPlayer.updateOptions({
       stopWithApp: true,
       capabilities: [
         TrackPlayer.CAPABILITY_PLAY,
@@ -45,19 +54,21 @@ const AlbumsDetail = (props) => {
     //console.log('album:', album);
     //console.log('Math.round(album.duration):', album.duration);
     const currentTrack = await TrackPlayer.getCurrentTrack();
+
     if (currentTrack == null) {
       await TrackPlayer.reset();
       await TrackPlayer.add(albums);
-      await TrackPlayer.add({
-        id: album.id,
-        url: album.url,
-        title: album.title,
-        artist: album.artist,
-        artwork: album.artwork,
-        duration: album.duration,
-      });
+      // await TrackPlayer.add({
+      //   id: album.id,
+      //   url: album.url,
+      //   title: album.title,
+      //   artist: album.artist,
+      //   artwork: album.artwork,
+      //   duration: album.duration,
+      // });
       await TrackPlayer.play();
     } else {
+      console.log('playbackState:', playbackState);
       if (playbackState === TrackPlayer.STATE_PAUSED) {
         await TrackPlayer.play();
       } else {

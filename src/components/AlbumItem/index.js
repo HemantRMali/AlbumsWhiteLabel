@@ -4,7 +4,7 @@ import {View, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 const AlbumItem = (props) => {
-  //console.log('props:', props);
+  //console.log('AlbumItem:');
   const album = props.item;
   return (
     <View style={styles.itemContainer}>
@@ -20,4 +20,4 @@ const AlbumItem = (props) => {
   );
 };
 
-export default AlbumItem;
+export default React.memo(AlbumItem);
